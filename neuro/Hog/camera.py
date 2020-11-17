@@ -29,7 +29,7 @@ class VideoCamera(object):
         interpolation=cv2.INTER_AREA)   
 
         gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-        face_rects=dlib.simple_object_detector('neuro/static/assets/ThermalModels/hog_detector.svm')
+        face_rects=dlib.simple_object_detector('/neuro/static/assets/ThermalModels/hog_detector.svm')
         
 
         rects=face_rects(gray,1)
