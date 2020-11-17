@@ -3,7 +3,7 @@
 import cv2
 import dlib
 # defining face detector
-face_cascade=cv2.CascadeClassifier('OpenCV-Face-Landmarks-Drowsiness-Recognition/neuro/static/assets/RGBModels/cascade.xml')
+face_cascade=cv2.CascadeClassifier('static/assets/RGBModels/cascade.xml')
 ds_factor=0.6
 
 def detector(detector):
