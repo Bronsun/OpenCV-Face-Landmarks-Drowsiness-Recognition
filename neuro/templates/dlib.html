@@ -1,0 +1,23 @@
+{% extends "main.html"%}
+{%block content%}
+<section class="section has-text-centered">
+    <h1 class="title has-text-centered">Face and facial landmarks detection on thermal images</h1>
+    <p class="has-text-danger">Use Live Camera only if you have thermal camera mounted to your device</p>
+    <p class="has-text-centered is-size-2">Choose your option:</p>
+    <p class="has-text-centered is-size-4">Face detection: </p>
+    <div class="buttons is-centered">
+        <a class="button is-info" href="/haar">Haar Cascade Classifier</a>
+        <a class="button is-info" href="/hog">HOG+SVM Classifier</a>
+    </div>
+  
+  
+    
+</section>
+
+<section class="section has-background-info-light has-text-centered">
+    <h2 class="title">Live Facial Landmarks Predictor with  HOG+SVM Detector</h2>
+    <img id="bg" class="is-centered" src="{{ url_for('Dlib.video_feed_2') }}">
+</section>
+
+
+{%endblock content%}

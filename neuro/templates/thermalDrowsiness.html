@@ -1,0 +1,20 @@
+{% extends "main.html"%}
+{%block content%}
+<section class="section has-text-centered">
+    <h1 class="title has-text-centered">Live Drowsiness Detection on Thermal Camera</h1>
+    <p class="has-text-danger">Use Live Camera only if you have thermal camera mounted to your device</p>
+    <br>
+    <h2 class="title has-text-centered">How it Works?</h2>
+    <p class="has-text-centered">When you yawn a message will apear. After that counter of yawning will increase. If you have more than 5 yawns in time of 5 minutes you will be informed that you are tired.</p>
+  
+  
+    
+</section>
+
+<section class="section has-background-info-light has-text-centered">
+    <h2 class="title">Drowsiness Detection</h2>
+    <img id="bg" class="is-centered" src="{{ url_for('ThermalDrowsiness.video_feed') }}">
+</section>
+
+
+{%endblock content%}

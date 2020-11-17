@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Face and facial landmarks detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.css') }}">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="{{url_for('static', filename='js/hamburger.js')}}"></script>
+    
+    <script type="text/javascript" src="//www.termsfeed.com/public/cookie-consent/3.1.0/cookie-consent.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+      cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express","palette":"light","language":"en"});
+      });
+      </script>
+      
+      <noscript>Cookie Consent by <a href="https://www.TermsFeed.com/" rel="nofollow noopener">TermsFeed</a></noscript>
+
+
+
+</head>
+
+<body>
+  
+    <nav class="navbar is-info is-fixed-top " role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger " aria-label="menu" aria-expanded="false" data-target="menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+        <div id="menu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">Main page</a>
+                <a class="navbar-item" href="/rgb">RGB Camera</a>
+                <a class="navbar-item" href="/thermal">Thermal Camera</a>
+                <a class="navbar-item" href="/drowsiness">Drowsiness Detection</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">More</a>
+                    <div class="navbar-dropdown">
+          
+                        <a class="navbar-item" href="/contact">
+                          Contact
+                        </a>
+                </div>    
+            </div>
+        </div>
+        </div>
+    </nav>
+    {%block content%}
+    <section class ="section">
+        <h1 class="title has-text-centered">Face, facial landmarks and drowsiness detection in RGB and thermal Videos</h1>
+        <p class="has-text-centered">This project is for testing models in OpenCV. This website was created for my bachelor degree in computer science.</p>
+        <br>
+        <h2 class="title has-text-centered">How it works?</h2>
+        <p class="has-text-centered">First for all you need to enable camera in the browser settings</p>
+        <p class="has-text-centered">You can choose in which filed you want to detect faces and facial landmarks.</p>
+        <br>
+        <div class="content has-text-centered">
+        <div class="buttons is-centered">
+            <a class="button is-primary" href="/rgb">RGB Video</a>
+            <a class="button is-danger" href="/thermal">Thermal Video</a>
+        </div>
+        </div>
+        <p class="has-text-centered">Also you can detect drowsiness in this section</p>
+        <br>
+        <div class="content has-text-centered">
+            <div class="buttons is-centered">
+                <a class="button is-info" href="/drowsiness">Drowsiness detection</a> 
+            </div>
+            </div>
+
+        <h3 class="title has-text-centered">How to implement your own model?</h3>
+        <p class="has-text-centered">I am currently working on it 😉</p>
+        <p class="has-text-centered">However if you are interested in testing your own models check my github. You will find everything you want 😀</p>
+    </section>
+    <section class="section has-background-info-light has-text-centered">
+        <h2 class="title">Check your camera</h2>
+        <p class="text">Do not worry about your privacy. Our website does not store any data from your camera 😀</p>
+        <img id="bg" class="is-centered" src="{{ url_for('video_feed') }}">
+    </section>
+    {%endblock content%}
+    <footer class="footer has-background-black">
+      <div class="content has-text-centered">
+        <p>
+            <span class="icon is-large has-text-white">
+              <a class="has-text-white" href="https://www.facebook.com/profile.php?id=100002577283334"><i class="fab fa-2x fa-facebook"></i></a>
+            </span>
+            <span class="icon is-large has-text-white">
+              <a class="has-text-white" href="http://linkedin.com/in/mateusz-broncel-339921149" ><i class="fab fa-2x fa-linkedin"></i></a>
+            </span>
+            <span class="icon is-large has-text-white">
+              <a class="has-text-white" href="https://github.com/Bronsun"><i class="fab fa-2x fa-github-square"></i></a>
+            </span>
+            <span class="icon is-large has-text-white">
+              <a class="has-text-white" href="mailto:mateusz.broncel1998@gmail.com"><i class="fas fa-2x fa-envelope"></i></a>
+            </span>
+            <p>
+              
+             
+             </p> <a class="has-text-white is-hovered" href="/contact">Contact</a>
+            
+            </p> <a class="has-text-white is-hovered">Created by Mateusz Broncel</a>
+          
+      </div>
+      
+    </footer>
+</body>
+
+</html>
+
+
+
+
+

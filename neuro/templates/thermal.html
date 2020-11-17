@@ -1,0 +1,145 @@
+{% extends "main.html"%}
+{%block content%}
+<section class="section has-text-centered">
+    <h1 class="title has-text-centered">Face and facial landmarks detection on thermal images</h1>
+    <p class="has-text-danger">Thermal Live Camera only if you have thermal camera mounted to your device</p>
+    <p class="has-text-centered is-size-2">Choose your option:</p>
+    <p class="has-text-centered is-size-4">Face detection: </p>
+    <div class="buttons is-centered">
+        <a class="button is-info" href="/haar">Haar Cacade Classifier</a></li><br>
+        <a class="button is-info" href="/hog">HOG+SVM Classifier</a> </li>
+    </div>
+    <p class="has-text-centered is-size-4">Facial landmarks: </p>
+    <ul>
+        <li><a class="button is-info" href="/dlib">Dlib predictor</a> </li>
+        
+    </ul>
+   
+    
+</section>
+
+<section class="section has-background-info-light has-text-centered">
+    <h2 class="title">Gallery</h2>
+    <div class="tile is-ancestor has-text-centered">
+        <div class="tile is-4 is-vertical is-parent has-text-centered">
+          <div class="tile is-child box has-text-centered">
+            
+            <article>
+                <p class="title">HOG+Dlib</p>
+                
+                <figure class="image is-4by3">
+                  <img src="static/assets/Photos/Thermal/HOG+PREDICTOR/6.png">
+                </figure>
+              </article>
+          </div>
+          <div class="tile is-child box">
+            
+            <article>
+                <p class="title">HAAR + Dlib</p>
+                
+                <figure class="image is-4by3">
+                  <img src="static/assets/Photos/Thermal/HAAR+PREDICTOR/1.png">
+                </figure>
+              </article>
+          </div>
+       
+       
+          <div class="tile is-child box">
+            
+            <article >
+                <p class="title">HOG+Dlib</p>
+               
+                <figure class="image is-4by3">
+                  <img src="static/assets/Photos/Thermal/HOG+PREDICTOR/8.png">
+                </figure>
+              </article>
+          
+        </div> 
+        </div>
+      
+      
+        <div class="tile is-4 is-vertical is-parent has-text-centered">
+          <div class="tile is-child box has-text-centered">
+            
+            <article>
+                <p class="title">HAAR+Dlib</p>
+                
+                <figure class="image is-4by3">
+                  <img src="static/assets/Photos/Thermal/HAAR+PREDICTOR/2.png">
+                </figure>
+              </article>
+          </div>
+          <div class="tile is-child box">
+            
+            <article>
+                <p class="title">HOG+Dlib (False result)</p>
+               
+                <figure class="image is-4by3">
+                  <img src="static/assets/Photos/Thermal/HOG+PREDICTOR/9.png">
+                </figure>
+              </article>
+          </div>
+       
+       
+          <div class="tile is-child box">
+            
+            <article >
+                <p class="title">HAAR+Dlib</p>
+                
+                <figure class="image is-4by3">
+                  <img src="static/assets/Photos/Thermal/HAAR+PREDICTOR/5.png">
+                </figure>
+              </article>
+          
+        </div> 
+        </div>
+        <div class="tile is-4 is-vertical is-parent has-text-centered">
+            <div class="tile is-child box has-text-centered">
+              
+              <article>
+                  <p class="title">HOG+Dlib</p>
+                 
+                  <figure class="image is-4by3">
+                    <img src="static/assets/Photos/Thermal/HOG+PREDICTOR/10.png">
+                  </figure>
+                </article>
+            </div>
+            <div class="tile is-child box">
+              
+              <article>
+                  <p class="title">HAAR+Dlib</p>
+                 
+                  <figure class="image is-4by3">
+                    <img src="static/assets/Photos/Thermal/HAAR+PREDICTOR/4.png">
+                  </figure>
+                </article>
+            </div>
+         
+         
+            <div class="tile is-child box">
+              
+              <article >
+                  <p class="title">HAAR + Dlib (False result)</p>
+                 
+                  <figure class="image is-4by3">
+                    <img src="static/assets/Photos/Thermal/HAAR+PREDICTOR/3.png">
+                  </figure>
+                </article>
+            
+          </div> 
+          </div>
+    </div>
+</section>
+<section class="section has-background-info-light has-text-centered">
+    <h2 class="title">Demo  HOG+SVM Classifier</h2>
+    <video width="720" height="540" controls class="is-centered">
+      <source src="static/assets/video/Thermal_Hog.mov" type="video/mp4">
+    </video>
+    <h2 class="title">Demo Haar Cascade Classifier</h2>
+    <video width="720" height="540" controls class="is-centered">
+      <source src="static/assets/video/Thermal_Haar.mp4" type="video/mp4">
+    </video>
+</section>
+
+
+{%endblock content%}

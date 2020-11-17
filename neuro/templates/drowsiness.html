@@ -1,0 +1,104 @@
+{% extends "main.html"%}
+{%block content%}
+<section class="section has-text-centered">
+    <h1 class="title has-text-centered">Drowsiness Detection</h1>
+    <p class="has-text-danger">Thermal Live Camera only if you have thermal camera mounted to your device</p>
+    <p class="has-text-centered is-size-2">Choose your option:</p>
+    <div class="buttons is-centered">
+        <a class="button is-info" href="/rgbDrowsiness">RGB Video</a></li><br>
+        <a class="button is-info" href="/thermalDrowsiness">Thermal Video</a> </li>
+    </div>
+</section>
+
+<section class="section has-background-info-light has-text-centered">
+    <h2 class="title">Gallery</h2>
+    <div class="tile is-ancestor has-text-centered">
+        <div class="tile is-4 is-vertical is-parent has-text-centered">
+          <div class="tile is-child box has-text-centered">
+            
+            <article>
+               
+                
+                <figure class="image is-4by3">
+                  <img src="static/assets/Photos/RGB/1D.png">
+                </figure>
+              </article>
+          </div>
+          <div class="tile is-child box">
+            
+            <article>
+                
+                
+                <figure class="image is-4by3">
+                  <img src="static/assets/Photos/Thermal/5D.png">
+                </figure>
+              </article>
+          </div>
+       
+       
+  
+        </div>
+      
+      
+        <div class="tile is-4 is-vertical is-parent has-text-centered">
+          <div class="tile is-child box has-text-centered">
+            
+            <article>
+            
+                
+                <figure class="image is-4by3">
+                  <img src="static/assets/Photos/Thermal/4D.png">
+                </figure>
+              </article>
+          </div>
+          <div class="tile is-child box">
+            
+            <article>
+                
+               
+                <figure class="image is-4by3">
+                  <img src="static/assets/Photos/RGB/3D.png">
+                </figure>
+              </article>
+          </div>
+       
+       
+        </div>
+        <div class="tile is-4 is-vertical is-parent has-text-centered">
+            <div class="tile is-child box has-text-centered">
+              
+              <article>
+                 
+                  
+                  <figure class="image is-4by3">
+                    <img src="static/assets/Photos/RGB/2D.png">
+                  </figure>
+                </article>
+            </div>
+            <div class="tile is-child box">
+              
+              <article>
+                 
+                 
+                  <figure class="image is-4by3">
+                    <img src="static/assets/Photos/Thermal/6D.png">
+                  </figure>
+                </article>
+            </div>
+         
+        
+          </div>
+    </div>
+    </section>
+    <section class="section has-background-info-light has-text-centered">
+      <h2 class="title">Demo RGB Drowsiness</h2>
+      <video width="720" height="540" controls class="is-centered">
+        <source src="static/assets/video/yawnRGB.mp4" type="video/mp4">
+      </video>
+      <h2 class="title">Demo Thermal Drowsiness</h2>
+      <video width="720" height="540" controls class="is-centered">
+        <source src="static/assets/video/ThermalDrowsiness.mp4" type="video/mp4">
+      </video>
+  </section>
+
+{%endblock content%}

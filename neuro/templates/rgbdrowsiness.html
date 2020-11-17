@@ -1,0 +1,20 @@
+{% extends "main.html"%}
+{%block content%}
+<section class="section has-text-centered">
+    <h1 class="title has-text-centered">Live Drowsiness Detection on RGB Camera</h1>
+   
+    <br>
+    <h2 class="title has-text-centered">How it Works?</h2>
+    <p class="has-text-centered">When you yawn a message will apear.</p>
+  
+  
+    
+</section>
+
+<section class="section has-background-info-light has-text-centered">
+    <h2 class="title">Drowsiness Detection</h2>
+    <img id="bg" class="is-centered" src="{{ url_for('RGBDrowsiness.video_feed') }}">
+</section>
+
+
+{%endblock content%}

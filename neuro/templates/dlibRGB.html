@@ -1,0 +1,17 @@
+{% extends "main.html"%}
+{%block content%}
+<section class="section has-text-centered">
+    <h1 class="title has-text-centered">Face and facial landmarks detection on RGB images</h1>
+   
+ 
+   
+    
+</section>
+
+<section class="section has-background-info-light has-text-centered">
+    <h2 class="title">Live Facial Landmarks Predictor with  Haar Cascade Detector</h2>
+    <img id="bg" class="is-centered" src="{{ url_for('DlibRGB.video_feed') }}">
+</section>
+
+
+{%endblock content%}

@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+section{
+    height: 80vh;
+   
+    padding: 4vh;
+    margin-bottom: 12vh;
+}
+.main{
+   text-align: center;
+   font-size: 7vw;
+}
+.logo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    object-position: center;
+}
+.hub{
+    border:solid 2px white;
+    width: 20vw;
+    border-radius: 8px;
+    transform: translateX(25vw);
+}
+.porn{
+    color: black;
+    text-shadow: 2px 2px 4px gray;
+    background-color: coral;
+    width: 27vw;
+    border: 2px solid coral;
+    border-radius: 8px;
+    font-weight: 700;
+    
+}
+
+.motto{
+    font-size: 2vw;
+    margin-top: 3vh;
+    color: coral;
+}
+.day_text{
+    margin-top: 5vw;
+    font-size: 2vw;
+    margin-bottom: 10vh;
+}
+.check{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.arrow{
+    animation-name: arrow;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color:coral
+}
+
+
+.link{
+    background-color: coral;
+   
+}
+.text{
+    padding: 20px;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    background-color: coral;
+
+}
+h1,h2{
+    background-color: coral;
+    color:black;
+}
+
+.container{
+    background-color: coral !important;
+    text-align: center;
+    padding: 20px;
+}
+.control{
+    background-color: coral;
+}
+.label{
+    background-color: coral;
+    color: black;
+    font-size: 10vh;
+    font-weight: 700;
+}
+.field{
+    background-color: coral;
+}
+.input{
+    margin-top: 10vh;
+    width: 50%;
+    height: 10vh;
+    border: 2px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    
+}
+input:hover{
+    background-color: black;
+}
+.error{
+    background-color: coral;
+    color: darkred;
+    
+}
+
+button{
+    margin-top: 20px;
+    width: 25%;
+    height: 10vh;
+    border-radius: 8px;
+    border: 2px solid black;
+    color: black;
+    font-size: 20px;
+    background-color: coral;
+}
+button:hover{
+    cursor: pointer;
+    background-color: black;
+    color:white;
+    border: 2px solid coral;
+    
+}
+.stats p{
+    background-color: coral;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    font-size: 4vh;
+   
+}
+
+.generator{
+    padding: 20px;
+    border-color: black;
+    height: 25vh;
+}
+.buttonGen{
+    text-align: center; transform: translateX(150%);border:2px solid white;
+    background-color: black;
+    color: white;
+}
+.buttonGen:hover{
+    background-color: coral;
+    color: black;
+    border: solid 2px black;
+}
+
+
+.help{
+    text-align: center;
+    height: 20vh;
+}
+
+
+.about{
+    text-align: center;
+    background-color: coral;
+    height: 20vh;
+    
+}
+
+.insta{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 5vh;
+}
+.insta:hover{
+    cursor: pointer;
+    color:red;
+    text-decoration: none;
+}
+
+
+@media(max-width: 1024px){
+    section{
+        height: 100%;
+        padding: 6vw;
+        width: 100%;
+        
+    }
+    .main{
+        text-align: center;
+        font-size: 8vh;
+        height:110vh;
+     }
+     .logo{
+      
+         
+         margin-top:10vh;
+     }
+     .hub{
+       
+        width: 30vw;
+        border-radius: 8px;
+        transform: translateX(0);
+    }
+    .porn{
+        color: black;
+        width: 53vw;
+
+        text-align: center;
+        margin-left: -10vw;
+    }
+    .motto{
+        font-size: 10vw;
+       text-align: center;
+       transform:translateX(0)
+    }
+    .day_text{
+        
+        font-size: 10vw;
+        margin-bottom: 5vh;
+        margin-top:15vh;
+        transform: translateX(0);
+    }
+    .randomphoto{
+        width: 20;
+        text-align: center;
+        
+
+    }
+    .randomphoto img{
+        display: none;
+    }
+    .check{
+        width: 100%;
+        margin-bottom: 20vh;
+        margin-top: 10vh;
+    }
+    .link{
+        margin-top: 10vh;
+        width:100%;
+    }
+    .text{
+        margin-top: 10vh;
+        width: 100%;
+        font-size: 5vw;
+        letter-spacing: normal;
+        transform: translateX(-8vw);
+    }
+    h1,h2{
+        width: 100%;
+        
+    }
+    .label{
+        font-size:9vw;
+    }
+    form{
+        border:none;
+        text-decoration: none;
+        width: 100%;
+    }
+    .input{
+        width: 94%;
+    }
+    button{
+        width: 100%;
+    }
+    .buttonGen{
+         transform: translateX(0);
+    }
+    .about{
+        height: 60vh;
+    }
+    footer{
+        padding: 5vw;
+    }
+    .social{
+        width: 100%;
+        margin-left: 5vw;
+    }
+    .help p{
+        margin-left: 6vw;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+@keyframes arrow {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(10px);}
+    100%{transform: translateY(0);}
+  }
+
