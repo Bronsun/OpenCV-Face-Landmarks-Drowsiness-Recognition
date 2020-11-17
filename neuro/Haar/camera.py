@@ -3,7 +3,7 @@
 import cv2
 
 # defining face detector
-face_cascade=cv2.CascadeClassifier("neuro/static/assets/ThermalModels/cascade.xml")
+face_cascade=cv2.CascadeClassifier('neuro/static/assets/ThermalModels/cascade.xml')
 ds_factor=0.6
 
 class VideoCamera(object):

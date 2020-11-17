@@ -12,8 +12,8 @@ import imutils
 # defining face detector
 
 ds_factor=0.6
-detector = dlib.simple_object_detector("neuro/static/assets/ThermalModels/hog_detector.svm") #For detecting faces
-landmark_path="neuro/static/assets/ThermalModels/predictor.dat" #Path of the file - if stored in the same directory. Else, give the relative path
+detector = dlib.simple_object_detector('neuro/static/assets/ThermalModels/hog_detector.svm') #For detecting faces
+landmark_path='neuro/static/assets/ThermalModels/predictor.dat' #Path of the file - if stored in the same directory. Else, give the relative path
 predictor = dlib.shape_predictor(landmark_path) #For identifying landmarks
 yawn_status = False 
 yawn_count = 0

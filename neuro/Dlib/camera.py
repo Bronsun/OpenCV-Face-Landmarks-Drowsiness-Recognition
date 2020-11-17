@@ -9,7 +9,7 @@ import argparse
 import imutils
 
 # defining face detector
-face_cascade=cv2.CascadeClassifier("neuro/static/assets/ThermalModels/cascade.xml")
+face_cascade=cv2.CascadeClassifier('neuro/static/assets/ThermalModels/cascade.xml')
 ds_factor=0.6
 
 
@@ -31,7 +31,7 @@ class VideoCamera(object):
 
         gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
         face_rects=face_cascade.detectMultiScale(gray,1.3,5)
-        predictor = dlib.shape_predictor("neuro/static/assets/ThermalModels/predictor.dat")
+        predictor = dlib.shape_predictor('neuro/static/assets/ThermalModels/predictor.dat')
 
         for (x,y,w,h) in face_rects:
             cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
@@ -64,8 +64,8 @@ class VideoCameraHog(object):
         interpolation=cv2.INTER_AREA)   
 
         gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-        face_rects=dlib.simple_object_detector("neuro/static/assets/ThermalModels/hog_detector.svm")
-        predictor = dlib.shape_predictor("neuro/static/assets/ThermalModels/predictor.dat")
+        face_rects=dlib.simple_object_detector('neuro/static/assets/ThermalModels/hog_detector.svm')
+        predictor = dlib.shape_predictor('neuro/static/assets/ThermalModels/predictor.dat')
 
         rects=face_rects(gray,1)
         for (i, rect) in enumerate(rects): 
