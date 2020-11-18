@@ -1,0 +1,40 @@
+{% extends "main.html"%}
+{%block content%}
+<section class="section has-text-centered">
+    <h1 class="title has-text-centered">Face and facial landmarks detection on thermal images</h1>
+    
+    </div>
+  
+  
+    
+</section>
+
+<section class="section has-background-info-light has-text-centered">
+    <h2 class="title">Test your photo</h2>
+    <h3 class="title">Thermal Haar Cascade Classifier with dlib predictor</h3>
+    <img id="bg" class="is-centered" src="{{ url_for('Photo.video_feed') }}">
+    <h3 class="title">Thermal HOG+SVM Classifier with dlib predictor</h3>
+    <img id="bg" class="is-centered" src="{{ url_for('Photo.video_feed_2') }}">
+    <h3 class="title">RGB Haar Cascade Classifier with dlib predictor</h3>
+    <img id="bg" class="is-centered" src="{{ url_for('Photo.video_feed_3') }}">
+    {% if success %}
+    <p class="has-text-success">{{success}}</p> 
+    {%endif%}
+    <form action = "/uploader_photo" method = "POST" 
+     enctype = "multipart/form-data">
+     <label for="file-upload" class="button is-primary">
+       Choose your photo
+    </label>
+    <label for="file-submit" class="button is-danger">
+      Upload
+   </label>
+     <input id="file-upload" type = "file" name = "file" accept=".jpg,.png" style="display: none;" />
+     <input id="file-submit" type = "submit" style="display: none;" onclick="move()"/>
+  </form>   
+  <div class="w3-light-grey">
+    <div id="myBar" class="w3-green" style="height:24px;width:0"></div>
+  </div>
+</section>
+
+
+{%endblock content%}

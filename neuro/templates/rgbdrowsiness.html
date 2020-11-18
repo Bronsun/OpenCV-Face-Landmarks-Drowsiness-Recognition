@@ -1,7 +1,7 @@
 {% extends "main.html"%}
 {%block content%}
 <section class="section has-text-centered">
-    <h1 class="title has-text-centered">Live Drowsiness Detection on RGB Camera</h1>
+    <h1 class="title has-text-centered">Online Drowsiness Detection on RGB Camera</h1>
    
     <br>
     <h2 class="title has-text-centered">How it Works?</h2>
@@ -14,6 +14,23 @@
 <section class="section has-background-info-light has-text-centered">
     <h2 class="title">Drowsiness Detection</h2>
     <img id="bg" class="is-centered" src="{{ url_for('RGBDrowsiness.video_feed') }}">
+    {% if success %}
+    <p class="has-text-success">{{success}}</p> 
+    {%endif%}
+    <form action = "/uploader_RGBD" method = "POST" 
+     enctype = "multipart/form-data">
+     <label for="file-upload" class="button is-primary">
+       Choose your video
+    </label>
+    <label for="file-submit" class="button is-danger">
+      Upload
+   </label>
+     <input id="file-upload" type = "file" name = "file" accept=".mp4" style="display: none;" />
+     <input id="file-submit" type = "submit" style="display: none;" onclick="move()"/>
+  </form>   
+  <div class="w3-light-grey">
+    <div id="myBar" class="w3-green" style="height:24px;width:0"></div>
+  </div>
 </section>
 
 

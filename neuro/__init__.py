@@ -21,8 +21,9 @@ from neuro.ThermalDrowsiness.routes import ThermalDrowsiness
 from neuro.RGB.routes import RGB
 from neuro.DlibRGB.routes import DlibRGB
 from neuro.RGBDrowsiness.routes import RGBDrowsiness
+from neuro.Photo.routes import Photo
 
-
+app.register_blueprint(Photo)
 app.register_blueprint(RGBDrowsiness)
 app.register_blueprint(DlibRGB)
 app.register_blueprint(RGB)

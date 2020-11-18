@@ -16,7 +16,7 @@ ds_factor=0.6
 class VideoCamera(object):
     def __init__(self):
        #capturing video
-       self.video = cv2.VideoCapture(0)
+       self.video = cv2.VideoCapture('neuro/static/assets/video/dlib.mp4')
     
     def __del__(self):
         #releasing camera
@@ -50,7 +50,7 @@ class VideoCamera(object):
 class VideoCameraHog(object):
     def __init__(self):
        #capturing video
-       self.video = cv2.VideoCapture(0)
+       self.video = cv2.VideoCapture('neuro/static/assets/video/dlib.mp4')
     
     def __del__(self):
         #releasing camera

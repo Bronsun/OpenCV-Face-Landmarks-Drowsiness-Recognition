@@ -97,7 +97,7 @@ def lowerlip(facial_landmarks):
 class VideoCamera(object):
     def __init__(self):
        #capturing video
-       self.video = cv2.VideoCapture(0)
+       self.video = cv2.VideoCapture('neuro/static/assets/video/thermalD.mp4')
     
     def __del__(self):
         #releasing camera

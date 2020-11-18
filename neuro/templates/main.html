@@ -15,11 +15,10 @@
       cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express","palette":"light","language":"en"});
       });
       </script>
-      
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <noscript>Cookie Consent by <a href="https://www.TermsFeed.com/" rel="nofollow noopener">TermsFeed</a></noscript>
-      
-
-
+      <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+     
 </head>
 
 <body>
@@ -38,6 +37,7 @@
                 <a class="navbar-item" href="/rgb">RGB Camera</a>
                 <a class="navbar-item" href="/thermal">Thermal Camera</a>
                 <a class="navbar-item" href="/drowsiness">Drowsiness Detection</a>
+                <a class="navbar-item" href="/photo">Photo</a>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">More</a>
                     <div class="navbar-dropdown">
@@ -56,7 +56,7 @@
         <p class="has-text-centered">This project is for testing models in OpenCV. This website was created for my bachelor degree in computer science.</p>
         <br>
         <h2 class="title has-text-centered">How it works?</h2>
-        <p class="has-text-centered">First for all you need to enable camera in the browser settings</p>
+        <p class="has-text-centered">On this website you can only test your premade videos. If you want to go live using your own camera you have to download source code from <a class="has-text-info" href="/">here.</a> There you can find instruction how to use it locally.</p>
         <p class="has-text-centered">You can choose in which filed you want to detect faces and facial landmarks.</p>
         <br>
         <div class="content has-text-centered">
@@ -78,38 +78,27 @@
         <p class="has-text-centered">However if you are interested in testing your own models check my github. You will find everything you want 😀</p>
     </section>
     <section class="section has-background-info-light has-text-centered">
-        <h2 class="title">Check your camera</h2>
-        <p class="text">Do not worry about your privacy. Our website does not store any data from your camera 😀</p>
-        <img id="bg" class="is-centered" src="{{ url_for('video_feed') }}">
-        <video id="video"></video>
-        <canvas id="canvas"></canvas><br>
-        <button onclick="snap();">Snap</button>
-        <script type="text/javascript">
-          var video = document.getElementById('video');
-          var canvas = document.getElementById('canvas');
-          var context = canvas.getContext('2d');
-    
-          navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.oGetUserMedia || navigator.msGetUserMedia;
-    
-          if(navigator.getUserMedia){
-            navigator.getUserMedia({video:true}, streamWebCam, throwError);
-          }
-    
-          function streamWebCam (stream) {
-            video.src = window.URL.createObjectURL(stream);
-            video.play();
-          }
-    
-          function throwError (e) {
-            alert(e.name);
-          }
-    
-          function snap () {
-            canvas.width = video.clientWidth;
-            canvas.height = video.clientHeight;
-            context.drawImage(video, 0, 0);
-          }
-        </script>
+        <h2 class="title">Upload your RGB video to test if everything is working fine</h2>
+        <p class="text">Do not worry about your privacy. Our website will remove your video everytime if someone get to the main page</p>
+        <p class="text">Pssss.... If you want to test a image check this out <a class="has-text-info" href='/photo'>CLICK</a> </p>
+        <img id="bg" class="is-centered" src="{{ url_for('Main.video_feed') }}">
+        {% if success %}
+        <p class="has-text-success">{{success}}</p> 
+        {%endif%}
+        <form action = "/uploader_main" method = "POST" 
+         enctype = "multipart/form-data">
+         <label for="file-upload" class="button is-primary">
+           Choose your video
+        </label>
+        <label for="file-submit" class="button is-danger">
+          Upload
+       </label>
+         <input id="file-upload" type = "file" name = "file" accept=".mp4" style="display: none;" />
+         <input id="file-submit" type = "submit" style="display: none;" onclick="move()"/>
+      </form>   
+      <div class="w3-light-grey">
+        <div id="myBar" class="w3-green" style="height:24px;width:0"></div>
+      </div>
     </section>
     {%endblock content%}
     <footer class="footer has-background-black">
@@ -137,7 +126,21 @@
       </div>
       
     </footer>
-    
+    <script>
+      function move() {
+        var elem = document.getElementById("myBar");   
+        var width = 1;
+        var id = setInterval(frame, 30);
+        function frame() {
+          if (width >= 100) {
+            clearInterval(id);
+          } else {
+            width++; 
+            elem.style.width = width + '%'; 
+          }
+        }
+      }
+      </script>
 </body>
 
 </html>

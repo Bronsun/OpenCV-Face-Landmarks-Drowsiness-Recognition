@@ -1,13 +1,19 @@
 from flask import render_template, url_for, flash, redirect,request,Blueprint,Response
 from neuro import app
 from neuro.Dlib.camera import VideoCamera, VideoCameraHog
-
+import os
+import os.path
 Dlib = Blueprint('Dlib',__name__)
 
 
 @Dlib.route('/dlib')
 def index():
     # rendering webpage
+    x =os.path.exists('neuro/static/assets/video/dlib.mp4')
+    if x == False:
+        return render_template('dlib.html')
+    else:
+        os.remove('neuro/static/assets/video/dlib.mp4')
     return render_template('dlib.html')
 
 
@@ -29,3 +35,12 @@ def video_feed():
 def video_feed_2():
     return Response(gen(VideoCameraHog()), mimetype='multipart/x-mixed-replace; boundary=frame')
 
+@Dlib.route('/uploader_dlib', methods = ['GET', 'POST'])
+def upload_file():
+   success = None
+   if request.method == 'POST':
+      f = request.files['file']
+      f.save("neuro/static/assets/video/"+f.filename)
+      os.rename("neuro/static/assets/video/"+f.filename,r"neuro/static/assets/video/dlib.mp4")
+      success = "File uploaded successfully"
+      return render_template('dlib.html',success=success)

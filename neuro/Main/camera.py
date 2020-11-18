@@ -14,7 +14,7 @@ def predictor(predictor):
 class VideoCamera(object):
     def __init__(self):
        #capturing video
-       self.video = cv2.VideoCapture('neuro/static/assets/video/thermal.mp4')
+       self.video = cv2.VideoCapture('neuro/static/assets/video/RGBMain.mp4')
     
     def __del__(self):
         #releasing camera
