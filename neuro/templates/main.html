@@ -17,19 +17,7 @@
       </script>
       
       <noscript>Cookie Consent by <a href="https://www.TermsFeed.com/" rel="nofollow noopener">TermsFeed</a></noscript>
-      <script>
-        var localStream;
-        var localStreamObjUrl;
-        window.onload = function() {
-            navigator.webkitGetUserMedia("audio, video", gotStream);
-        }
-        function gotStream(stream) {
-            localStream = stream;
-            localStreamObjUrl = webkitURL.createObjectURL(localStream);
-            var video = document.getElementById("selfView");
-            video.src = localStreamObjUrl;
-        }
-    </script>
+      
 
 
 </head>
@@ -93,7 +81,7 @@
         <h2 class="title">Check your camera</h2>
         <p class="text">Do not worry about your privacy. Our website does not store any data from your camera 😀</p>
         <img id="bg" class="is-centered" src="{{ url_for('video_feed') }}">
-        <video id="selfView" autoplay audio=muted></video>
+       
     </section>
     {%endblock content%}
     <footer class="footer has-background-black">
