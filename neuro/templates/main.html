@@ -81,9 +81,35 @@
         <h2 class="title">Check your camera</h2>
         <p class="text">Do not worry about your privacy. Our website does not store any data from your camera 😀</p>
         <img id="bg" class="is-centered" src="{{ url_for('video_feed') }}">
-       <video id="vidDisplay" autoplay="true">
-
-       </video>
+        <video id="video"></video>
+        <canvas id="canvas"></canvas><br>
+        <button onclick="snap();">Snap</button>
+        <script type="text/javascript">
+          var video = document.getElementById('video');
+          var canvas = document.getElementById('canvas');
+          var context = canvas.getContext('2d');
+    
+          navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.oGetUserMedia || navigator.msGetUserMedia;
+    
+          if(navigator.getUserMedia){
+            navigator.getUserMedia({video:true}, streamWebCam, throwError);
+          }
+    
+          function streamWebCam (stream) {
+            video.src = window.URL.createObjectURL(stream);
+            video.play();
+          }
+    
+          function throwError (e) {
+            alert(e.name);
+          }
+    
+          function snap () {
+            canvas.width = video.clientWidth;
+            canvas.height = video.clientHeight;
+            context.drawImage(video, 0, 0);
+          }
+        </script>
     </section>
     {%endblock content%}
     <footer class="footer has-background-black">
@@ -111,18 +137,7 @@
       </div>
       
     </footer>
-    <script type="text/javascript">
-      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia||navigator.mozGetUserMedia||navigator.msGetUserMedia||navigator.oGetUserMedia;
-      if (navigator.getUserMedia){
-        navigator.getUserMedia({video:true},handleVideo,videoError);
-      }
-      function handleVideo(stream){
-        document.querySelector('#vidDisplay').src = window.URL.createObjectURL(stream);
-      }
-      function videoError(e){
-        alert("There has some probem...");
-      }
-    </script>
+    
 </body>
 
 </html>
